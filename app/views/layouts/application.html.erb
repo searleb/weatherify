@@ -7,22 +7,11 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<h1>Weatherify</h1>
+<%= link_to("Weatherify", location_search_path) %>
 
 <nav>
-    <ul>
-      <li><%= link_to('Home', '/') %></li>
-      <li><%= User.find( session[:user_id] ).username if session[:user_id] %></li>
-      <li><%= User.find( session[:user_id] ).avatar if session[:user_id] %></li>
-      <%== smartnav %>
-    </ul>
-  </nav>
-
-<% if flash[:notice].present? %>
-  <div class="notice">
-    <%= flash[:notice] %>
-  </div>
-<% end %>
+  <%== smartnav %>
+</nav>
 
 <%= yield %>
 

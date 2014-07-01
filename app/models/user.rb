@@ -14,6 +14,7 @@
 
 class User < ActiveRecord::Base
 	has_secure_password
+	has_many :histories
 	validates :avatar, :presence => true
 	validates :username, :presence => true, :length => {:minimum => 2}
 end

@@ -6,15 +6,27 @@ module ApplicationHelper
     end
 
     if @current_user.present?
-      links += link_to('Player', location_search_path)
-      links += "<li>"
-      links += link_to('Logout ' + @current_user.username, login_path, :data => {:method => :delete, :confirm => 'Really logout?'})
-      links += "</li>"
-    else
-      links += "<li>#{ link_to('Sign up', new_user_path) }</li>"
-      links += "<li>#{ link_to('Sign in', login_path) }</li>"
-    end
+     links += "<li>"
+     links += link_to('Account', user_path(@current_user))
+     links += "</li>"
 
-    links
+     links += "<li>"
+     links += link_to('Logout', login_path, :data => {:method => :delete, :confirm => 'Really logout?'})
+     links += "</li>"
+   else
+    links += "<li>#{ link_to('Sign up', new_user_path) }</li>"
+    # links += "<li>#{ link_to('Sign in', login_path) }</li>"
+  end
+  
+  end
+
+  def user_nav
+     links = ''
+     links += "<li>"
+     links += link_to('Edit Account', edit_user_path(@current_user))
+     links += "</li>"
+     links += "<li>"
+     links += link_to('Delete Account', user_path(@current_user), :data => {:confirm => "Are you sure you want to delete #{@current_user.username} from the database?"}, :method => :delete)
+     links += "</li>"
   end
 end
