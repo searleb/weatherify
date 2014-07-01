@@ -1,0 +1,18 @@
+<h1>location search</h1>
+
+<%= form_tag '/location_search' do %>
+<p>
+	<%= label_tag :city %>
+	<%= text_field_tag :city %>
+</p>
+	<%= submit_tag %>
+<% end %>
+
+<%= @coordinates %>
+
+<% if @spotify_uri_list.present? %>
+
+<iframe src="https://embed.spotify.com/?uri=spotify:trackset:weatherify:<%= @spotify_uri_list.join(',') %>" view=coverart frameborder="0" allowtransparency="true" width="600" height="500"></iframe>
+<%= @weather_report%>
+
+<% end %>

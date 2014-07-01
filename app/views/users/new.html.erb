@@ -1,0 +1,28 @@
+<% if @user.errors.any? %>
+	<h1>You massive idiot!</h1>
+	<ol>
+		<% @user.errors.full_messages.each do |msg| %>
+		<li><%= msg %></li>
+	</ol>
+	<% end %>
+<% end %>
+
+<%= form_for @user do |f| %>
+	<p>
+		<%= f.label :username %>
+		<%= f.text_field :username, :autofocus => true %>
+	</p>
+	<p>
+		<%= f.label :avatar %>
+		<%= f.url_field :avatar %>
+	</p>
+	<p>
+		<%= f.label :password %>
+		<%= f.password_field :password %>
+	</p>
+	<p>
+		<%= f.label :password_confirmation %>
+		<%= f.password_field :password_confirmation %>
+	</p>
+	<%= f.submit %>
+<% end %>
