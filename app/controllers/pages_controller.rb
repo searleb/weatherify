@@ -1,9 +1,9 @@
 class PagesController < ApplicationController
-  def home
-  end
+   
+   before_action :check_if_logged_in, :except => [:home]
 
-  def hamldemo
-    @starring = 'Ewoks'
+  def home
+    @starring = "homepage"
   end
 
   def location_search
@@ -32,16 +32,18 @@ class PagesController < ApplicationController
   	render :location_search
   end
   
-  	
-
   def weather_search
   end
-
 
   def player
   end
 
   def test
+  end
+
+  private
+  def check_if_logged_in
+    redirect_to(new_user_path) if @current_user.nil?
   end
 
 end
