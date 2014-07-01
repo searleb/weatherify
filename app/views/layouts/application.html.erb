@@ -7,10 +7,13 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+<h1>Weatherify</h1>
 
 <nav>
     <ul>
       <li><%= link_to('Home', '/') %></li>
+      <li><%= User.find( session[:user_id] ).username if session[:user_id] %></li>
+      <li><%= User.find( session[:user_id] ).avatar if session[:user_id] %></li>
       <%== smartnav %>
     </ul>
   </nav>

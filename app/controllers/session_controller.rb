@@ -8,7 +8,7 @@ class SessionController < ApplicationController
     # raise params.inspect?
     if user.present? && user.authenticate(params[:password])
       session[:user_id] = user.id
-      redirect_to root_path
+      redirect_to location_search_path
     else
       flash[:notice] = "Invalid login. Please try again."
       redirect_to login_path

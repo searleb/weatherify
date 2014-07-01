@@ -6,6 +6,7 @@ module ApplicationHelper
     end
 
     if @current_user.present?
+      links += link_to('Player', location_search_path)
       links += "<li>"
       links += link_to('Logout ' + @current_user.username, login_path, :data => {:method => :delete, :confirm => 'Really logout?'})
       links += "</li>"

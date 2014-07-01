@@ -29,16 +29,10 @@ class PagesController < ApplicationController
 		t.id
 	end
 	@spotify_uri_list = @spotify_uri_list_full.sample(20)
-  	render :location_search
+  render :player
   end
   
-  def weather_search
-  end
-
   def player
-  end
-
-  def test
   end
 
   private

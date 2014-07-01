@@ -10,7 +10,3 @@
 
 <%= @coordinates %>
 
-<% if @spotify_uri_list.present? %>
-
-<iframe src="https://embed.spotify.com/?uri=spotify:trackset:weatherify:<%= @spotify_uri_list.join(',') %>" view=coverart frameborder="0" allowtransparency="true" width="600" height="500"></iframe>
-<% end %>
