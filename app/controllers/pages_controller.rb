@@ -23,7 +23,7 @@ class PagesController < ApplicationController
   	#Authenticate with Spotify.
   	RSpotify.authenticate('4c8ea9ad02ca42e78b002bcfd4a3659d', 'e93433b0957f40beac4d06c1efd4a077')
   	#Search Spotify with current condition description.
-	@tracks = RSpotify::Track.search(@weather_report.currently.summary).select{ |t| t.name.match(/@weather_report.currently.summary/) }, limit = 50, offset = rand(20)  	
+	@tracks = RSpotify::Track.search(@weather_report.currently.summary.gsub("Mostly", ""), limit = 50, offset = rand(20))  	
 	# map tracks to retrieve only the track ID's.
 	@spotify_uri_list_full = @tracks.map do |t| 
 		t.id
@@ -31,7 +31,7 @@ class PagesController < ApplicationController
 	@spotify_uri_list = @spotify_uri_list_full.sample(20)
   	render :location_search
   end
-
+  
   	
 
   def weather_search
