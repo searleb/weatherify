@@ -1,4 +1,18 @@
-<p>show page</p>
+<p>Account</p>
 <%== user_nav %>
+
+<section>
+<h4> <%= @current_user.username %> </h4>
+<%= image_tag(@current_user.avatar) %>
+</section>
+
+<% if @current_user == @user %>
+	<%= render :partial => "form" %>
+<% end %>
+<section id="history">
+	
+<p>history</p>
+
+</section>
 
 
