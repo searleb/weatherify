@@ -1,11 +1,11 @@
-<h1>location search</h1>
+<h1>Where are you?</h1>
 
 <%= form_tag '/location_search' do %>
 <p>
 	<%= label_tag :city %>
 	<%= text_field_tag :city %>
 </p>
-	<%= submit_tag %>
+	<%= submit_tag( "GO!", :class => "btn btn-default") %>
 <% end %>
 
 <%= @coordinates %>

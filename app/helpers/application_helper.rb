@@ -22,11 +22,8 @@ module ApplicationHelper
 
   def user_nav
      links = ''
-     # links += "<li>"
-     # links += link_to('Edit Account', edit_user_path(@current_user))
-     # links += "</li>"
-     links += "<li>"
+     links += "<p>"
      links += link_to('Delete Account', user_path(@current_user), :data => {:confirm => "Are you sure you want to delete #{@current_user.username} from the database?"}, :method => :delete)
-     links += "</li>"
+     links += "</p>"
   end
 end

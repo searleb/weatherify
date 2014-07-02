@@ -7,13 +7,19 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<%= link_to("Weatherify", location_search_path) %>
+<div class="container">
 
-<nav>
-  <%== smartnav %>
-</nav>
+<h1 class ="jumbotron"><%= link_to("Weatherify", location_search_path) %></h1>
 
-<%= yield %>
+	<nav class="nav nav-pills" role="tablist">
+	  <%== smartnav %>
+	</nav>
+
+	<div class="col-lg-12">
+	<%= yield %>
+	</div>
+
+</div>
 
 </body>
 </html>

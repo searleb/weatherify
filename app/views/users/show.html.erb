@@ -1,46 +1,44 @@
-<p>Account</p>
-<%== user_nav %>
+<h3>Account</h3>
 
-<section>
+
+<section class="col-lg-6">
 	<h4> <%= @current_user.username %> </h4>
 	<%= image_tag(@current_user.avatar) %>
-</section>
 
 <% if @current_user == @user %>
 <%= render :partial => "form" %>
 <% end %>
+</section>
 
-<section id="history">
-	<table>
-				<th>Location:</th>
-				<th>Weather Summary:</th>
-				<th>Temperature: </th>	
-				<th>Date:</th>
-		<tr>
-			<% @history.each do |h| %>
-				<td><%= h.location %></td>
-				<td><%= h.weather_summary %></td>
-				<td><%= h.weather_temp  %></td>
-				<td><%= h.created_at %></td>
-		</tr>
+<% if @history.present? %>
+	<section id="history" class="col-lg-6">
+		<table class= "table-striped">
+				<th>Date</th>
+				<th>Location</th>
+				<th>Weather Summary</th>
+				<th>Temperature</th>	
+					<tr>
+						<% @history.each do |h| %>
+							<td><%= h.created_at %></td>
+							<td><%= h.location %></td>
+							<td><%= h.weather_summary %></td>
+							<td><%= h.weather_temp  %></td>
+					</tr>
+
 				<th>Artist</th>	
 				<th>Title</th>
 				<th>Album</th>
+					<% h.tracks.each do |t| %>
+						<tr>
+							<td><%= t.track_artist %></td>
+							<td><%= t.track_name %></td>
+							<td><%= t.track_album %></td>
+						</tr>
+					<% end %>	
+				<% end %>
+			</table>
+	</section>
+<% end %>
 
-			<% h.tracks.each do |t| %>
-		<tr>
-			<td><%= t.track_artist %></td>
-			<td><%= t.track_name %></td>
-			<td><%= t.track_album %></td>
-		</tr>
-
-			<% end %>	
-		<% end %>
-	</table>
-</tr>
-
-
-
-</section>
-
+<%== user_nav %>
 
