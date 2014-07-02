@@ -1,6 +1,6 @@
 # == Schema Information
 #
-# Table name: tracks_histories
+# Table name: tracks
 #
 #  id          :integer          not null, primary key
 #  spotify_uri :string(255)
@@ -9,6 +9,6 @@
 #  updated_at  :datetime
 #
 
-class TracksHistory < ActiveRecord::Base
-	belongs_to :histories
+class Tracks < ActiveRecord::Base
+	belongs_to :history
 end

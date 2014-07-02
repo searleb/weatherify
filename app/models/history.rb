@@ -12,5 +12,5 @@
 
 class History < ActiveRecord::Base
 	belongs_to :user
-	has_many :tracks_histories
+	has_many :tracks
 end

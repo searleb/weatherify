@@ -1,4 +1,18 @@
 <p>player page</p>
 <% if @spotify_uri_list.present? %>
-	<iframe src="https://embed.spotify.com/?uri=spotify:trackset:weatherify:<%= @spotify_uri_list.join(',') %>" view=coverart frameborder="0" allowtransparency="true" width="600" height="500"></iframe>
+	<iframe src="https://embed.spotify.com/?uri=spotify:trackset:weatherify:<%= @spotify_uri_list.join(',') %>" frameborder="0" allowtransparency="true" width="600"></iframe>
 <% end %>
+
+<section>
+<ul>
+	<li><%= @weather_time %></li>
+	<li><%= @geo_location%></li>
+	<li><%= @weather_summary %></li>
+	<li><%= @weather_temp %></li>
+	<li>
+		<% @track_images.each do |i| %>
+			<%= image_tag(i) %>
+		<% end %>
+	</li>
+</ul>
+</section>
