@@ -21,6 +21,8 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find params[:id]
+    @history = History.where :user_id => @current_user
+    @tracks = Track.where :user_id => @current_user
   end
 
   def update

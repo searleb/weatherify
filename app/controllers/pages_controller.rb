@@ -24,19 +24,28 @@ class PagesController < ApplicationController
       @spotify_uri_list = @tracks.map do |t| 
        t.id
       end
-
        # returns url links to each album artwork
        @spotify_images = @tracks.map do |t|
         t.album.images[1]['url']
       end
-      
+
+      @track_name = @tracks.map do |t|
+        t.name
+      end
+      @track_album = @tracks.map do |t|
+        t.album.name
+      end
+      @track_artist = @tracks.map do |t|
+        t.artists[0].name
+      end
+
       @weather_time = @weather_report.currently.time
       @weather_summary = @weather_report.currently.summary
       @weather_temp = @weather_report.currently.temperature
       @geo_location = Geocoder.search(params[:city])
       @geo_location = @geo_location[0].data['formatted_address']
 
-      save
+      create
 
       render :player
     end
@@ -49,12 +58,12 @@ class PagesController < ApplicationController
       redirect_to(new_user_path) if @current_user.nil?
     end
 
-    def save
+    def create
       # saves data for history record
       history = History.create( :location => @geo_location, :time => @weather_time, :weather_summary => @weather_summary, :weather_temp => @weather_temp )
 
-      (0..@spotify_images.count).each do |i|
-        track = Track.create( :spotify_uri => @spotify_uri_list[i], :spotify_image => @spotify_images[i])
+      (0...@spotify_images.count).each do |i|
+        track = Track.create( :spotify_uri => @spotify_uri_list[i], :spotify_image => @spotify_images[i], :track_name => @track_name[i], :track_album => @track_album[i], :track_artist => @track_artist[i] )
         history.tracks << track
       end
      @current_user.histories << history

@@ -2,16 +2,37 @@
 <%== user_nav %>
 
 <section>
-<h4> <%= @current_user.username %> </h4>
-<%= image_tag(@current_user.avatar) %>
+	<h4> <%= @current_user.username %> </h4>
+	<%= image_tag(@current_user.avatar) %>
 </section>
 
 <% if @current_user == @user %>
-	<%= render :partial => "form" %>
+<%= render :partial => "form" %>
 <% end %>
+
 <section id="history">
 	
-<p>history</p>
+	<table>
+		<tr>
+			<% @history.each do |h| %>
+			<td>Location: <%= h.location %></td>
+			<td>Weather Summary: <%= h.weather_summary %></td>
+			<td>Temperature: <%= h.weather_temp  %></td>
+			<td>Date: <%= h.created_at %></td>
+		</tr>
+			<% h.tracks.each do |t| %>
+			<tr>
+				<td>Name: <%= t.track_name %></td>
+				<td>Artist: <%= t.track_artist %></td>
+				<td>Album :<%= t.track_album %></td>
+			</tr>
+
+			<% end %>	
+		<% end %>
+	</table>
+</tr>
+
+
 
 </section>
 

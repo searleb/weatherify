@@ -8,6 +8,9 @@
 #  created_at    :datetime
 #  updated_at    :datetime
 #  spotify_image :string(255)
+#  track_name    :string(255)
+#  track_artist  :string(255)
+#  track_album   :string(255)
 #
 
 class Track < ActiveRecord::Base
