@@ -11,17 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140701102219) do
+ActiveRecord::Schema.define(version: 20140702025011) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "histories", force: true do |t|
     t.string   "location"
-    t.string   "weather"
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "time"
+    t.string   "weather_summary"
+    t.string   "weather_temp"
   end
 
   create_table "tracks", force: true do |t|
@@ -29,6 +31,7 @@ ActiveRecord::Schema.define(version: 20140701102219) do
     t.integer  "history_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "spotify_image"
   end
 
   create_table "users", force: true do |t|
