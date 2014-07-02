@@ -11,21 +11,28 @@
 <% end %>
 
 <section id="history">
-	
 	<table>
+				<th>Location:</th>
+				<th>Weather Summary:</th>
+				<th>Temperature: </th>	
+				<th>Date:</th>
 		<tr>
 			<% @history.each do |h| %>
-			<td>Location: <%= h.location %></td>
-			<td>Weather Summary: <%= h.weather_summary %></td>
-			<td>Temperature: <%= h.weather_temp  %></td>
-			<td>Date: <%= h.created_at %></td>
+				<td><%= h.location %></td>
+				<td><%= h.weather_summary %></td>
+				<td><%= h.weather_temp  %></td>
+				<td><%= h.created_at %></td>
 		</tr>
+				<th>Artist</th>	
+				<th>Title</th>
+				<th>Album</th>
+
 			<% h.tracks.each do |t| %>
-			<tr>
-				<td>Name: <%= t.track_name %></td>
-				<td>Artist: <%= t.track_artist %></td>
-				<td>Album :<%= t.track_album %></td>
-			</tr>
+		<tr>
+			<td><%= t.track_artist %></td>
+			<td><%= t.track_name %></td>
+			<td><%= t.track_album %></td>
+		</tr>
 
 			<% end %>	
 		<% end %>
