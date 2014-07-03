@@ -1,6 +1,6 @@
 <!-- LOCATION SEARCH PAGE -->
-<% @ip_address = Geocoder.search('202.171.181.44') %>
-<% @ip_location = @ip_address[0].city %>
+
+<% @ip_location = request.location.city %>
 
 <section class = "col-md-4 col-md-offset-4">
   <h1 class="text-center">Where are you?</h1>
