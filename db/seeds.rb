@@ -10,5 +10,5 @@ u5 = User.create(:username => 'IDidntDoItHarris', :avatar => 'https://scontent-a
 u6 = User.create(:username => 'WreckinBallz', :avatar => 'http://www.geeksandbeats.com/wp-content/uploads/2014/04/Miley_Cyrus_-_Wrecking_Ball_KISSTHEMGOODBYE_NET_214.jpg', :password => 'hello', :password_confirmation => 'hello')
 u7 = User.create(:username => 'SheLetGo', :avatar => 'http://datastore01.rediff.com/h1500-w1500/thumb/69586A645B6D2A2E3131/ok8ssom5ry533own.D.0.Leonardo-DiCaprio-Titanic-3D-Movie-Photo.jpg', :password => 'hello', :password_confirmation => 'hello')
 u8 = User.create(:username => 'SpaceOddity', :avatar => 'http://blogs.kqed.org/pop/files/2013/03/tumblr_lkk31u4Oi71qgqw54o1_500.png', :password => 'hello', :password_confirmation => 'hello')
-u9 = User.create(:username => 'CanibalSuarez', :avatar => 'http://thesource.com/wp-content/uploads/2014/06/luis_suarez-394988.jpg', :password => 'hello', :password_confirmation => 'hello')
+u9 = User.create(:username => 'CannibalSuarez', :avatar => 'http://thesource.com/wp-content/uploads/2014/06/luis_suarez-394988.jpg', :password => 'hello', :password_confirmation => 'hello')
 
