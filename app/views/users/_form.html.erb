@@ -1,28 +1,28 @@
-<% if @user.errors.any? %>
-	<h1>You massive idiot!</h1>
-	<ol>
-		<% @user.errors.full_messages.each do |msg| %>
-		<li><%= msg %></li>
-	</ol>
+<!-- SIGN UP AND EDIT FORM -->
+	<% if @user.errors.any? %>
+		<div class = "notice bg-danger">
+			<% @user.errors.full_messages.each do |msg| %>
+				<li><%= msg %></li>
+			<% end %>
+		</div>
 	<% end %>
-<% end %>
 
-<%= form_for @user do |f| %>
+	<%= form_for @user, :class=> "form-group" do |f| %>
 	<p>
 		<%= f.label :username %>
-		<%= f.text_field :username, :autofocus => true %>
+		<%= f.text_field :username, :class => 'form-control input-lg', :autofocus => true %>
 	</p>
 	<p>
 		<%= f.label :avatar %>
-		<%= f.url_field :avatar %>
+		<%= f.url_field :avatar, :class => 'form-control input-lg' %>
 	</p>
 	<p>
 		<%= f.label :password %>
-		<%= f.password_field :password %>
+		<%= f.password_field :password, :class => 'form-control input-lg' %>
 	</p>
 	<p>
 		<%= f.label :password_confirmation %>
-		<%= f.password_field :password_confirmation %>
+		<%= f.password_field :password_confirmation, :class => 'form-control input-lg' %>
 	</p>
-	<%= f.submit( "Update", :class => "btn btn-default" )%>
-<% end %>
+	<%= f.submit( "Sign Up!", :class => "btn btn-default btn-lg" )%>
+	<% end %>

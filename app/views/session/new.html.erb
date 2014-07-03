@@ -1,8 +1,7 @@
 <!-- LOGIN PAGE -->
 
-
 <section class = "col-md-4 col-md-offset-4">
-<%= form_tag '/login', :class=> "form-group" do %>
+	<%= form_tag '/login', :class=> "form-group" do %>
 	<p>
 		<%= label_tag :username %>
 		<%= text_field_tag :username, nil, :class => 'form-control input-lg'%>
@@ -12,9 +11,13 @@
 		<%= password_field_tag :password, nil, :class => 'form-control input-lg' %>
 	</p>
 	<%= submit_tag 'login', :class => 'btn btn-default btn-lg' %>
-<% end %>
+	<% end %>
 
-<% if flash[:notice].present? %>
-<div class = "notice bg-danger"><%= flash[:notice] %></div>
-<% end %>
+	<% if flash[:notice].present? %>
+	<div class = "notice bg-danger"><%= flash[:notice] %></div>
+	<% end %>
 </section>
+
+<footer class="col-md-12 footer">
+	<p>This application requires a Spotify user account.</p>
+</footer>

@@ -7,25 +7,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <%= csrf_meta_tags %>
 </head>
-<body>
-<div class="container">
+	<body>
+		<div class="container">
 
-<div><h1 class="title text-center"><%= link_to("Weatherify", location_search_path) %></h1></div>
+		<div><h1 class="title text-center">
+		<%= link_to("Weatherify", @current_user.present? ? location_search_path : login_path) %></h1></div>
 
+			<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+				<div class = "container-fluid">
+			  		<ul class="nav navbar-nav">
+			  			<%== smartnav %>
+			  		</ul>
+			  	</div>
+			</nav>
 
-	<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
-		<div class = "container">
-	  		<ul>
-	  			<%== smartnav %>
-	  		</ul>
-	  	</div>
-	</nav>
-
-	
-	<%= yield %>
-	
-
-</div>
-
-</body>
+			<%= yield %>
+			
+		</div>
+	</body>
 </html>

@@ -1,8 +1,10 @@
 @import url(http://fonts.googleapis.com/css?family=Codystar);
-body{
-	padding-top: 70px;	
+html{
+	height: 100%;
 }
-nav{
+body{
+	padding-top: 70px;
+	padding-bottom: 1em;	
 }
 .notice{
 	padding: .8em;
@@ -13,7 +15,29 @@ nav{
 .title{
 	font-size: 5em;
 	font-family: 'Codystar', cursive; 
+	padding-bottom: 1em;
 }
 .player{
 	padding: 5em;
+}
+nav ul{
+	display: inline;
+	padding-top: 14px;
+}
+label{
+	min-width: 157px;
+}
+.user-avatar{
+	padding: 1em;
+}
+.user-avatar img{
+	border-radius: 50%;
+	max-width: 5em;
+}
+a:hover{
+	text-decoration: none;
+}
+.footer{
+	position: absolute bottom 0px;
+	
 }

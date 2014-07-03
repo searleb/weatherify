@@ -1,3 +1,4 @@
+<!-- PLAYER PAGE -->
 <section class = "col-lg-6 col-lg-offset-3 player">
 	<% if @spotify_uri_list.present? %>
 		<iframe src="https://embed.spotify.com/?uri=spotify:trackset:weatherify:<%= @spotify_uri_list.join(',') %>" frameborder="0" allowtransparency="true" width="100%"></iframe>
