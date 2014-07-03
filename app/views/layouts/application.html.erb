@@ -10,8 +10,11 @@
 	<body>
 		<div class="container">
 
-		<div><h1 class="title text-center">
-		<%= link_to("Weatherify", @current_user.present? ? location_search_path : login_path) %></h1></div>
+		<div class="text-center jumbotron">
+		<h1 class="title">
+			<%= link_to("Weatherify", @current_user.present? ? location_search_path : login_path) %>
+		</h1>
+		</div>
 
 			<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
 				<div class = "container-fluid">

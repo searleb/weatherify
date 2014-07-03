@@ -2,12 +2,12 @@
 <h3>All Users</h3>
 <section class="col-md-12">
 <% @users.each do |user| %>
-	
+	<div class="col-md-3 text-center user-index">
 	<h4><%= user.username %></h4>
 	<div class="user-avatar">
 		<%= image_tag(user.avatar) %>
 	</div>
-	<%== admin_nav %>
-
+	<%= link_to('Delete Account', user_path(user), :data => {:confirm => "Are you sure you want to delete #{user.username} from the database?", :method => :delete}) %>
+</div>
 <% end %>
 </section>

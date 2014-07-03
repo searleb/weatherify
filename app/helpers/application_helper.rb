@@ -27,11 +27,5 @@ module ApplicationHelper
      links += link_to('Delete Account', user_path(@current_user), :data => {:confirm => "Are you sure you want to delete #{@current_user.username} from the database?"}, :method => :delete)
      links += "</a></ul>"
   end
-  
-  def admin_nav
-     links = ''
-     links += "<ul><a>"
-     links += link_to('Delete Account', user_path(@current_user), :data => {:confirm => "Are you sure you want to delete #{@current_user.username} from the database?"}, :method => :delete)
-     links += "</a></ul>"
-  end
+
 end
