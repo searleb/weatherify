@@ -15,7 +15,7 @@ body{
 .title{
 	font-size: 5em;
 	font-family: 'Codystar', cursive; 
-	padding-bottom: 1em;
+	padding-bottom: .5em;
 }
 .player{
 	padding: 5em;
@@ -38,6 +38,8 @@ a:hover{
 	text-decoration: none;
 }
 .footer{
-	position: absolute bottom 0px;
-	
+	position: absolute bottom 0px;	
+}
+#welcome_description{
+	padding-bottom: 1.5em
 }
