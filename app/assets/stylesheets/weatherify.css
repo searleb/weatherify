@@ -1,8 +1,19 @@
-/*body{
-	max-width: 960px;
-	margin: auto;
-	font-family: helvetica;
+@import url(http://fonts.googleapis.com/css?family=Codystar);
+body{
+	padding-top: 70px;	
 }
 nav{
-	
-}*/
+}
+.notice{
+	padding: .8em;
+}
+.history-view{
+	overflow: scroll;
+}
+.title{
+	font-size: 5em;
+	font-family: 'Codystar', cursive; 
+}
+.player{
+	padding: 5em;
+}

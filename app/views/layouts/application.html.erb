@@ -4,20 +4,26 @@
   <title>WeatherifyApp</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <%= csrf_meta_tags %>
 </head>
 <body>
 <div class="container">
 
-<h1 class ="jumbotron"><%= link_to("Weatherify", location_search_path) %></h1>
+<div><h1 class="title text-center"><%= link_to("Weatherify", location_search_path) %></h1></div>
 
-	<nav class="nav nav-pills" role="tablist">
-	  <%== smartnav %>
+
+	<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+		<div class = "container">
+	  		<ul>
+	  			<%== smartnav %>
+	  		</ul>
+	  	</div>
 	</nav>
 
-	<div class="col-lg-12">
+	
 	<%= yield %>
-	</div>
+	
 
 </div>
 

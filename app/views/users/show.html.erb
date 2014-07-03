@@ -1,44 +1,38 @@
-<h3>Account</h3>
+<section class="col-md-6">
+	<h3>Account</h3>
+		<h4><%= @current_user.username %></h4>
+		<%= image_tag(@current_user.avatar) %>
 
-
-<section class="col-lg-6">
-	<h4> <%= @current_user.username %> </h4>
-	<%= image_tag(@current_user.avatar) %>
-
-<% if @current_user == @user %>
-<%= render :partial => "form" %>
-<% end %>
+		<% if @current_user == @user %>
+		<%= render :partial => "form" %>
+		<% end %>
+	<%== user_nav %>
 </section>
 
-<% if @history.present? %>
-	<section id="history" class="col-lg-6">
-		<table class= "table-striped">
-				<th>Date</th>
-				<th>Location</th>
-				<th>Weather Summary</th>
-				<th>Temperature</th>	
-					<tr>
-						<% @history.each do |h| %>
+<section class="col-md-6 history-view">
+<h3>History</h3>
+	<% @history.each do |h| %>
+		<div class="panel-group" id="accordion">
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h4 class="panel-title">
+						<a data-toggle="collapse" data-parent="#accordion" href="#collapse<%= h.id %>">
 							<td><%= h.created_at %></td>
-							<td><%= h.location %></td>
-							<td><%= h.weather_summary %></td>
-							<td><%= h.weather_temp  %></td>
-					</tr>
-
-				<th>Artist</th>	
-				<th>Title</th>
-				<th>Album</th>
+						</a>
+					</h4>
+				</div>
+				<div id="collapse<%= h.id %>" class="panel-collapse collapse">
 					<% h.tracks.each do |t| %>
-						<tr>
-							<td><%= t.track_artist %></td>
-							<td><%= t.track_name %></td>
-							<td><%= t.track_album %></td>
-						</tr>
+					<div class="panel-body">
+						<ul>
+							<li>Artist: <%= t.track_artist %></li>
+							<li>Title: <%= t.track_name %></li>
+							<li>Album: <%= t.track_album %></li>
+						</ul>
+					</div>
 					<% end %>	
-				<% end %>
-			</table>
-	</section>
-<% end %>
-
-<%== user_nav %>
+				</div>
+			</div>
+		<% end %>
+</section>
 
