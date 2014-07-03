@@ -7,7 +7,7 @@
   <%= form_tag '/location_search' do  %>
   <p>
    <%= label_tag  %>
-   <%= text_field_tag :city, nil, :class => 'form-control input-lg', :required => true, :value => @ip_location%>
+   <%= text_field_tag :city, nil, :class => 'form-control input-lg', :required => true, :value => @ip_location.city %>
  </p>
  <%= submit_tag( "GO!", :id => "button", :class => "btn btn-default btn-lg", :data=>{"loading-text" => "Loading..."}) %>
  <% end %>
