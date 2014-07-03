@@ -1,9 +1,13 @@
 <!-- ADMIN VIEW ALL USERS -->
-<table>
-	<% @users.each do |user| %>
-		<tr>
-			<td><%= user.username %></td>
-			<td><%= image_tag(user.avatar) %></td>
-		</tr>
-	<% end %>
-</table>
+<h3>All Users</h3>
+<section class="col-md-12">
+<% @users.each do |user| %>
+	
+	<h4><%= user.username %></h4>
+	<div class="user-avatar">
+		<%= image_tag(user.avatar) %>
+	</div>
+	<%== admin_nav %>
+
+<% end %>
+</section>

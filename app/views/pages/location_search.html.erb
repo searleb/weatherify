@@ -1,5 +1,6 @@
 <!-- LOCATION SEARCH PAGE -->
 
+<!-- LOCATION SEARCH -->
 <% @ip_location = request.location %>
 
 <section class = "col-md-4 col-md-offset-4">
@@ -11,20 +12,13 @@
  </p>
  <%= submit_tag( "GO!", :id => "button", :class => "btn btn-default btn-lg", :data=>{"loading-text" => "Loading..."}) %>
  <% end %>
-</section>
 
+</section>
 
 
 <script>
   $('#button').click(function () {
     var btn = $(this)
     btn.button('loading')
-    $.ajax(...).always(function () {
-      btn.button('reset')
-    });
   });
 </script>
-
-
-
-
