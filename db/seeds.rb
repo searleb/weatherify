@@ -11,4 +11,7 @@ u6 = User.create(:username => 'WreckinBallz', :avatar => 'http://www.geeksandbea
 u7 = User.create(:username => 'SheLetGo', :avatar => 'http://datastore01.rediff.com/h1500-w1500/thumb/69586A645B6D2A2E3131/ok8ssom5ry533own.D.0.Leonardo-DiCaprio-Titanic-3D-Movie-Photo.jpg', :password => 'hello', :password_confirmation => 'hello')
 u8 = User.create(:username => 'SpaceOddity', :avatar => 'http://blogs.kqed.org/pop/files/2013/03/tumblr_lkk31u4Oi71qgqw54o1_500.png', :password => 'hello', :password_confirmation => 'hello')
 u9 = User.create(:username => 'CannibalSuarez', :avatar => 'http://thesource.com/wp-content/uploads/2014/06/luis_suarez-394988.jpg', :password => 'hello', :password_confirmation => 'hello')
+u10 = User.create(:username => 'FaiSkillzYo', :avatar => 'https://fbcdn-sphotos-f-a.akamaihd.net/hphotos-ak-xfp1/t1.0-9/10264978_10103100534490857_3947383148738342458_n.jpg', :password => 'hello', :password_confirmation => 'hello')
+u11 = User.create(:username => 'Queeny', :avatar => 'http://www.globalpost.com/sites/default/files/imagecache/gp3_slideshow_large/queen_elizabeth_ii_2012_6_1.jpg', :password => 'hello', :password_confirmation => 'hello')
+
 
