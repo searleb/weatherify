@@ -74,15 +74,20 @@ a:hover{
 	padding: 10px;
 }
 .background img{
-	display: inline;
+	display:inline-block;
+    margin:auto;
 	opacity: 0.8;
 	padding: 1px;
 	height: 65px;
-	widows: 65px;
+	width: 65px;
 }
 .background{
 	padding-top: -2em;
 	padding-bottom: 4em;
+}
+.album-thumbs{
+	width: 100%;
+	text-align: center;
 }
 footer {
 	position: fixed;

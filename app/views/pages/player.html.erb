@@ -6,11 +6,11 @@
 </section>
 
 <section class="background col-md-8 col-md-offset-2">
-		
-		<% @spotify_images.each do |i| %>
-			<%= image_tag(i) %>
-		<% end %>
-	
+		<div class ="album-thumbs">
+			<% @spotify_images.each do |i| %>
+				<%= image_tag(i) %>
+			<% end %>
+		</div>
 </section>
 
 <section class="col-md-12 player-weather">

@@ -14,9 +14,9 @@ module ApplicationHelper
      links += link_to(' Logout', login_path, :data => {:method => :delete, :confirm => 'Really logout?'})
      links += "</a></ul>"
    else
-    links += "<ul><a>"
-    links += link_to(' Sign up', new_user_path)
-    links += "</a></ul>"
+     links += "<ul><a>"
+     links += link_to(' Sign up', new_user_path)
+     links += "</a></ul>"
   end
   
   end
