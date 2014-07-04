@@ -7,11 +7,11 @@ module ApplicationHelper
 
     if @current_user.present?
      links += "<ul><a>"
-     links += link_to(' Account', user_path(@current_user), :class => "glyphicon glyphicon-user")
+     links += link_to(' Account', user_path(@current_user))
      links += "</a></ul>"
 
      links += "<ul><a>"
-     links += link_to(' Logout', login_path, :class => "glyphicon glyphicon-off", :data => {:method => :delete, :confirm => 'Really logout?'})
+     links += link_to(' Logout', login_path, :data => {:method => :delete, :confirm => 'Really logout?'})
      links += "</a></ul>"
    else
     links += "<ul><a>"
