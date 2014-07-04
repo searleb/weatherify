@@ -26,7 +26,7 @@ class PagesController < ApplicationController
       end
        # returns url links to each album artwork
        @spotify_images = @tracks.map do |t|
-        t.album.images[1]['url']
+        t.album.images[2]['url']
       end
 
       @track_name = @tracks.map do |t|

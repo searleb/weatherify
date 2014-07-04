@@ -1,12 +1,23 @@
 <!-- PLAYER PAGE -->
-<section class = "col-lg-6 col-lg-offset-3 player">
+<section class = "col-md-6 col-md-offset-3 player">
 	<% if @spotify_uri_list.present? %>
 		<iframe src="https://embed.spotify.com/?uri=spotify:trackset:weatherify:<%= @spotify_uri_list.join(',') %>" frameborder="0" allowtransparency="true" width="100%"></iframe>
 	<% end %>
 </section>
 
-<section class="col-lg-12 player-weather">
+<section class="background col-md-8 col-md-offset-2">
+		
+		<% @spotify_images.each do |i| %>
+			<%= image_tag(i) %>
+		<% end %>
+	
+</section>
 
-	<h5><%= @geo_location %> | <%= @weather_summary %> | <%= @weather_temp %>˚F </h5>
+<section class="col-md-12 player-weather">
+
+	<p class="lead"><%= @geo_location %> | <%= @weather_summary %> | <%= @weather_temp %>˚F </p>
 
 </section>
+
+	
+	
