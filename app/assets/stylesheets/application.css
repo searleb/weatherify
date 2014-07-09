@@ -75,9 +75,9 @@ a:hover{
 }
 .background img{
 	display:inline-block;
-    margin:auto;
-	opacity: 0.8;
+  margin:auto;
 	padding: 1px;
+	padding-bottom: 3px;
 	height: 65px;
 	width: 65px;
 }
@@ -89,11 +89,14 @@ a:hover{
 	width: 100%;
 	text-align: center;
 }
+img{
+	vertical-align: none
+}
 footer {
 	position: fixed;
    bottom:0px;
    right: 0px;
    padding: 2px;
    height:30px;
-  }
+ }
 	
