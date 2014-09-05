@@ -1,28 +1,11 @@
-== README
+== Weatherify
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Weatherify takes your local weather conditions and creates a Spotify playlist based on that information.
+For example, if your summary is 'Partly Cloudy', Weatherify will create a playlist of tracks containing 'cloudy' in their title.
 
-Things you may want to cover:
+While the application works as indented the result wasn't as good as hoped.
+The weather summary used to search on are too general, resulting in a lack of varied playlists. It's almost always 'partly cloudy'...
 
-* Ruby version
+Spotify also limits the search response to a track list of 50.
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+If I was to rebuild the app I would like to try it with SoundCloud and possibly a different weather information provider. 
