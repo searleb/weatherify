@@ -16,7 +16,7 @@ class PagesController < ApplicationController
     @weather_report = ForecastIO.forecast(@coordinates.first, @coordinates.last)
 
   	#Search Spotify with current condition description.
-    @tracks = RSpotify::Track.search(@weather_report.currently.summary.gsub("Mostly", "").gsub('Partly',""), limit = 50, offset = rand(20))  	
+    @tracks = RSpotify::Track.search(@weather_report.currently.summary.gsub("Mostly", "").gsub("Partly",""), limit = 50, offset = rand(20))  	
     @tracks = @tracks.sample(20)
 
      # !Define varibles for saving history and player page display
